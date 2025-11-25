@@ -1,4 +1,4 @@
-# Food Recipe App – Practical Assessment
+# Food Recipe App 
 
 This project is a Food Recipe App. It lets you browse recipes, add them to your cart or wishlist, and even share your own recipes with everyone.
 
