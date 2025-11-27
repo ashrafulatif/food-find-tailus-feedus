@@ -2,26 +2,36 @@
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { useRouter } from "next/navigation";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
     {
-      title: "Your favorite dishes, right at your door",
+      title: "The perfect recipe is always within your reach",
       description:
-        "Order food and groceries online from the largest online food delivery platform.",
+        "Search recipes instantly and get cooking inspiration powered by intelligent AI tools",
       image: "/images/home/food2.png",
       bgColor: "bg-orange-50",
     },
     {
-      title: "Fresh groceries delivered daily",
+      title: "Find delicious meals in just a few seconds",
       description:
-        "Get fresh vegetables, fruits, and daily essentials delivered to your doorstep.",
+        "Explore smart recipe recommendations crafted from your ingredients, taste, and mood.",
       image: "/images/home/food3.png",
       bgColor: "bg-yellow-50",
     },
   ];
+
+  const router = useRouter();
+
+  const handleRouteGetStarted = () => {
+    router.push("/all-recipes");
+  };
+  const handleRouteRegister = () => {
+    router.push("/signup");
+  };
 
   // Auto-advance carousel
   useEffect(() => {
@@ -30,14 +40,6 @@ const Hero = () => {
     }, 10000);
     return () => clearInterval(interval);
   }, [slides.length]);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
 
   return (
     <div className="relative overflow-hidden">
@@ -77,10 +79,16 @@ const Hero = () => {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.6, delay: 0.6 }}
                 >
-                  <button className="bg-orange-500 hover:bg-orange-600 text-orange-100 font-semibold px-8 py-3 rounded-full transition-colors duration-300 shadow-lg hover:shadow-xl">
+                  <button
+                    className="bg-orange-500 hover:bg-orange-600 text-orange-100 font-semibold px-8 py-3 rounded-full transition-colors duration-300 shadow-lg hover:shadow-xl"
+                    onClick={handleRouteGetStarted}
+                  >
                     Get Started
                   </button>
-                  <button className="border border-orange-500 text-orange-600 hover:bg-yellow-500 hover:text-white font-semibold px-8 py-3 rounded-full transition-all duration-300">
+                  <button
+                    className="border border-orange-500 text-orange-600 hover:bg-yellow-500 hover:text-white font-semibold px-8 py-3 rounded-full transition-all duration-300"
+                    onClick={handleRouteRegister}
+                  >
                     Register
                   </button>
                 </motion.div>

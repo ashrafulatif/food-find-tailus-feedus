@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import RecipeCategoryCard from "../Recipes/RecipeCategoryCard";
+import { useRouter } from "next/navigation";
 
 const RecipeCategory = () => {
   const categories = [
@@ -39,9 +40,11 @@ const RecipeCategory = () => {
     },
   ];
 
+  const router = useRouter();
+
   const handleClick = (categoryTitle) => {
-    console.log(`Clicked on ${categoryTitle}`);
-    // Handle category click (e.g., navigate to category page)
+    // router.push(`/recipes/category/${encodeURIComponent(categoryTitle)}`);
+    router.push("all-recipes");
   };
 
   return (

@@ -46,7 +46,7 @@ export default function RecipeSubmissionForm() {
         </h1>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md border border-yellow-200"
+          className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md border border-orange-200"
         >
           {step === 1 && (
             <div className="space-y-6">
@@ -168,7 +168,7 @@ export default function RecipeSubmissionForm() {
               <button
                 type="button"
                 onClick={() => setStep(step + 1)}
-                className="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600"
+                className="px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600"
               >
                 Next
               </button>

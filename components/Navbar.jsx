@@ -32,8 +32,8 @@ const Navbar = () => {
               aria-label="logo"
               className="flex space-x-2 items-center"
             >
-              <span className="text-2xl font-bold text-yellow-900">
-                Tailus <span className="text-yellow-700">Feedus</span>
+              <span className="text-3xl font-bold text-yellow-900">
+                Rec<span className="text-yellow-700">ipo</span>
               </span>
             </Link>
 

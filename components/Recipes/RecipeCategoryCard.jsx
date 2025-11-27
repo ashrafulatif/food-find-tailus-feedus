@@ -1,4 +1,5 @@
 import React from "react";
+import { Utensils, Coffee, Heart, Cookie, Clock, ChefHat } from "lucide-react";
 
 const RecipeCategoryCard = ({
   title,
@@ -8,13 +9,31 @@ const RecipeCategoryCard = ({
   onClick,
   borderVariant = "default",
 }) => {
-  // Define border radius classes using ternary operator
+  //border radius
   const borderClass =
     borderVariant === "variant1"
       ? "rounded-tl-sm rounded-br-sm rounded-tr-3xl rounded-bl-3xl border-t-2 border-orange-300/80"
       : borderVariant === "variant2"
       ? "rounded-tl-3xl rounded-br-3xl rounded-tr-sm rounded-bl-sm border-b-2 border-orange-300/80 "
       : "rounded-3xl";
+
+  // icons based on category title
+  const getIcon = (categoryTitle) => {
+    switch (categoryTitle.toLowerCase()) {
+      case "italian cuisine":
+        return <Utensils className="w-6 h-6 text-orange-600" />;
+      case "asian fusion":
+        return <Coffee className="w-6 h-6 text-orange-600" />;
+      case "healthy bowls":
+        return <Heart className="w-6 h-6 text-orange-600" />;
+      case "desserts":
+        return <Cookie className="w-6 h-6 text-orange-600" />;
+      case "quick meals":
+        return <Clock className="w-6 h-6 text-orange-600" />;
+      default:
+        return <ChefHat className="w-6 h-6 text-orange-600" />;
+    }
+  };
 
   return (
     <div
@@ -23,19 +42,7 @@ const RecipeCategoryCard = ({
     >
       {/* Icon */}
       <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mb-3">
-        <svg
-          className="w-6 h-6 text-orange-600"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-          />
-        </svg>
+        {getIcon(title)}
       </div>
 
       {/* Content */}

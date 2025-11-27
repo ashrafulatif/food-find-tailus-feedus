@@ -106,7 +106,7 @@ const Testimonial = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="mt-16 bg-orange-500 rounded-2xl p-8 text-white">
+        <div className="mt-16 bg-gradient-to-t from-orange-500 to-red-500 shadow-sm rounded-2xl p-8 text-white">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
               <div className="text-4xl font-bold mb-2">50K+</div>
