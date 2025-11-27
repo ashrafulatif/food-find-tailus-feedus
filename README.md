@@ -1,4 +1,4 @@
-# Food Recipe App 
+# Food Recipe App
 
 This project is a Food Recipe App. It lets you browse recipes, add them to your cart or wishlist, and even share your own recipes with everyone.
 
@@ -57,15 +57,6 @@ This project is a Food Recipe App. It lets you browse recipes, add them to your 
 
 - Enhanced user experience by allowing actions (cart/wishlist) even before logging in.
 - Clear navigation and access to all recipes.
-
----
-
-## Time Spent (Approximate)
-
-- **Total:** 9 hours
-  - Planning: 1 hours
-  - Feature building & Bug fixing: 7-8 hours
-  - Testing & writing this doc: 1 hours
 
 ---
 
